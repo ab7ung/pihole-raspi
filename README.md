@@ -46,6 +46,7 @@ ssh pi@raspberrypi.local
 
 
 After the connecting to SSH use following tutorials
+
 6. Enable different options in sudo raspi-config
     Enable Wireless
     			a. sudo raspi-config
