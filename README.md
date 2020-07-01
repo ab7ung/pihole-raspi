@@ -135,4 +135,33 @@ After the connecting to SSH use following tutorials
 	execute with - python3 blinkatest.py
 
 
+11. Install Pi-hole for blocking ads
+
+	wget -O basic-install.sh https://install.pi-hole.net
+	sudo bash basic-install.sh
+
+	follow the online instructions for installing. Use Wlan0 for Wifi interfaces.
+	a. You may follow this tutorial as well - https://www.smarthomebeginner.com/pi-hole-setup-guide/
+		Remember the password for the web admin in the last step. if forgot, use this command to reset : pihole -a -p
+
+	b. If the FTL fails to update then update the nameserver as 1.1.1.1 in /etc/resolv.conf
+		commands as follows - sudo nano /etc/resolv.conf
+
+		nameserver 1.1.1.1
+
+12. Diplaying the pihole stats in the Adafruit TFT
+
+	Use the program to display pihole stats on the PiTFT.
+	https://raw.githubusercontent.com/adafruit/Adafruit_Learning_System_Guides/master/Pi_Hole_Ad_Blocker/mini_pitft_stats.py
+
+	sudo python3 mini_pitft_stats.py
+
+	You can pretty easily make it so this handy program runs every time you boot your Pi.
+	The fastest/easiest way is to put it in /etc/rc.local
+	
+	Run sudo nano /etc/rc.local and add the line
+	
+	sudo python3 /home/pi/mini_pitft_stats.py &
+	
+	on its own line right before exit 0
 
