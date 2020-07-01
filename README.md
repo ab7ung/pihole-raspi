@@ -2,8 +2,9 @@
 
 1. Flash Raspbian onto your SD card
 
-irst we need to flash Raspbian onto an SD card. (16GB or 32GB).
+First we need to flash Raspbian onto an SD card. (16GB or 32GB).
 Raspbian Lite or Raspian Full can be used.
+Use Raspberry PI Imager for Win and Mac (Also install bonjour service for Win, nothing to install for Mac)
 
 2. Edit config.txt on the boot partition 
 
@@ -132,9 +133,6 @@ After the connecting to SSH use following tutorials
 	-------------------------------------------------------
 
 	execute with - python3 blinkatest.py
-
-
-
 
 
 
