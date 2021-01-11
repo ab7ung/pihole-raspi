@@ -64,8 +64,3 @@ sudo apt install -y crackmapexec
 sudo apt install -y ruby
 sudo apt install -y kerberoast
 sudo apt install -y metasploit-framework 
-
-
-
-
-
