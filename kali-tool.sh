@@ -57,8 +57,7 @@ sudo apt install -y smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnsc
 sudo apt install -y jq
 sudo apt install -y grabber
 sudo apt install -y metasploit-framework
-sudo apt-get install -y hashcatsudo 
-sudo apt-get install -y hashcat
+sudo apt-get install -y hashcat hashcatsudo 
 sudo apt-get install -y bloodhound
 sudo apt install -y crackmapexec 
 sudo apt install -y ruby
