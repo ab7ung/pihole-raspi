@@ -41,6 +41,7 @@ That's it for configuration! Now you can eject the SD card, and insert it into t
 After the Pi boots up (this will take a while initially), the Pi should appear as a USB Ethernet device, and you can SSH into it using:
 
 ssh pi@raspberrypi.local
+password: raspberry
 
 
 After the connecting to SSH use following tutorials
@@ -162,6 +163,8 @@ After the connecting to SSH use following tutorials
 	sudo python3 /home/pi/mini_pitft_stats.py &
 	
 	on its own line right before exit 0
-
-
-
+	
+	
+	
+	
+	
