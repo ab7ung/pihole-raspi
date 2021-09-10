@@ -80,6 +80,9 @@ After the connecting to SSH use following tutorials
     sudo apt update -y
     sudo apt-get update -y
     sudo apt-get upgrade -y
+    -OR-    
+    sudo apt update -y && sudo apt-get update -y && sudo apt-get upgrade -y
+
 	
 	sudo apt-get install python3-pip
 	sudo pip3 install --upgrade setuptools
@@ -92,6 +95,8 @@ After the connecting to SSH use following tutorials
 	Font - sudo apt-get install ttf-dejavu
 	Pillow Library -  sudo apt-get install python3-pil
 	NumPy Library - sudo apt-get install python3-numpy
+	-OR-
+	sudo apt-get install ttf-dejavu python3-pil python3-numpy
 
 9. Testing the buttons in the PiTFT module
 
@@ -143,17 +148,22 @@ After the connecting to SSH use following tutorials
 	a. You may follow this tutorial as well - https://www.smarthomebeginner.com/pi-hole-setup-guide/
 		Remember the password for the web admin in the last step. if forgot, use this command to reset : pihole -a -p
 
-	b. If the FTL fails to update then update the nameserver as 1.1.1.1 in /etc/resolv.conf
+12. If the FTL fails to update then update the nameserver as 1.1.1.1 in /etc/resolv.conf
 		commands as follows - sudo nano /etc/resolv.conf
 
 		nameserver 1.1.1.1
+		nameserver 208.67.222.222
+		nameserver 208.67.220.220
 
-12. Diplaying the pihole stats in the Adafruit TFT
+13. Diplaying the pihole stats in the Adafruit TFT
 
 	Use the program to display pihole stats on the PiTFT.
-	https://raw.githubusercontent.com/adafruit/Adafruit_Learning_System_Guides/master/Pi_Hole_Ad_Blocker/mini_pitft_stats.py
+	wget https://raw.githubusercontent.com/adafruit/Adafruit_Learning_System_Guides/master/Pi_Hole_Ad_Blocker/mini_pitft_stats.py
 
 	sudo python3 mini_pitft_stats.py
+	
+	use the modpistats.py program - its a modified program with more detail and smaller font size.
+	wget https://raw.githubusercontent.com/ab7ung/pihole-raspi/master/modpistats.py
 
 	You can pretty easily make it so this handy program runs every time you boot your Pi.
 	The fastest/easiest way is to put it in /etc/rc.local
@@ -165,6 +175,21 @@ After the connecting to SSH use following tutorials
 	on its own line right before exit 0
 	
 	
+14. Update the pihole regularly
+
+	a) Add more adlist in pihole 
+	wget https://raw.githubusercontent.com/ab7ung/pihole-raspi/master/sqlexpdomains.sh && sudo bash sqlexpdomains.sh
 	
+	b) update the pihole, this will take sometime to update approx 15-20 min.
+	wget https://raw.githubusercontent.com/ab7ung/pihole-raspi/master/updateDomainlist.sh && sudo bash updateDomainlist.sh
+	
+	c) make a cornjob to regularly update the pihole without intervention
+
+	# select nano editor or any other editior available
+	crontab -e 
+	
+	# this will run the script everyday 5 mins past midnight. The path of the file updateDomainlist.sh should be changed.
+	
+	5 0 * * * /home/pi/updateDomainlist.sh
 	
 	
